@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UTS DBSCAN Project</title>
+</head>
+<body>
+    <h2>Upload Dataset</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <button type="submit">Proses DBSCAN</button>
+    </form>
+
+    {% if tables %}
+        <h3>Hasil Clustering</h3>
+        {{ tables|safe }}
+        <p>Silhouette Score: {{ sil }}</p>
+        <p>Davies-Bouldin Index: {{ dbi }}</p>
+        <img src="{{ img }}" width="600">
+    {% endif %}
+</body>
+</html>
